@@ -2,7 +2,8 @@ name: React App
 
 on:
   push:
-    - main
+    branches:
+      - main
 
 jobs:
   build:
