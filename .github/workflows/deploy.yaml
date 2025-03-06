@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,11 +26,6 @@ jobs:
         run: npm ci
       - name: Building apps
         run: npm run build
-  
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -43,5 +38,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  
-    
